@@ -31,7 +31,11 @@ The tool will be written in Javascript and intends to make use of Canvas to disp
 
 # Timeline 
 Friday Afternoon & Weekend - get something displaying onscreen (timer and icons for Drone and Hatchery to produce)
+
 Monday - Work on game logic for incrementing timer and game state. That is, at a given state, the mineral count is incremented according to the worker count in the previous state and the max supply/current worker/hatchery counts are updated which will be reflected in the display (implement classes + functions to do this).
+
 Tuesday - Continue to work on game logic (advancing state and particularly making sure it displays correctly on this day and try to start solver (automatic play)
+
 Wednesday - work on solver (automatic play) and ensure display of all actions taken thus far (scrollable list on the right) works
+
 Thursday Morning - deploy project
