@@ -11,25 +11,25 @@ document.addEventListener("DOMContentLoaded", function() {
     const game = new Game();
 
     const map = new Image();
-    map.src = '../src/atmospheres.jpg';
+    map.src = './src/atmospheres.jpg';
     map.addEventListener('load', function () {
         ctx.drawImage(map, 0, 0, 600, 559);
     })
 
     const drone = new Image();
-    drone.src = '../src/drone.jpeg';
+    drone.src = './src/drone.jpeg';
     drone.addEventListener('load', function() {
         ctx.drawImage(drone, canvas.width - 225, 100, 57, 56);
     })
     
     const hatchery = new Image();
-    hatchery.src = '../src/hatchery.jpg';
+    hatchery.src = './src/hatchery.jpg';
     hatchery.addEventListener('load', function () {
         ctx.drawImage(hatchery, canvas.width - 165, 100, 66, 56);
     })
 
     const minerals = new Image();
-    minerals.src = '../src/minerals.jpeg';
+    minerals.src = './src/minerals.jpeg';
     minerals.addEventListener('load', function () {
         ctx.drawImage(minerals, canvas.width - 90, 100, 56, 56);
     })
