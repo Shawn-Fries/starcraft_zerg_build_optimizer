@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const drone = new Image();
     drone.src = '../src/drone.jpeg';
     drone.addEventListener('load', function() {
-        ctx.drawImage(drone, canvas.width - 230, 100, 57, 56);
+        ctx.drawImage(drone, canvas.width - 225, 100, 57, 56);
     })
     
     const hatchery = new Image();
@@ -31,43 +31,43 @@ document.addEventListener("DOMContentLoaded", function() {
     const minerals = new Image();
     minerals.src = '../src/minerals.jpeg';
     minerals.addEventListener('load', function () {
-        ctx.drawImage(minerals, canvas.width - 100, 100, 56, 56);
+        ctx.drawImage(minerals, canvas.width - 90, 100, 56, 56);
     })
 
-    ctx.fillText(game.displayTime(), canvas.width -  50, 0, 100);
-    ctx.fillText(game.getDroneCount(), 0, 200, 100);
-    ctx.fillText(game.getHatcheryCount(), 76, 200, 100);
-    ctx.fillText(game.getMineralCount(), 76 + 75 + 5, 200, 100);
+    ctx.fillText(game.displayTime(), canvas.width - 200, 50, 150);
+    ctx.fillText(game.getDroneCount(), canvas.width - 225, 190, 100);
+    ctx.fillText(game.getHatcheryCount(), canvas.width - 150, 190, 100);
+    ctx.fillText(game.getMineralCount(), canvas.width - 90, 190, 100);
 
     canvas.addEventListener('click', function (e) {
         // Drone
-        if (e.pageX >= canvas.offsetLeft + canvas.clientLeft &&
-            e.pageX <= canvas.offsetLeft + canvas.clientLeft + 57 &&
+        if (e.pageX >= canvas.offsetLeft + canvas.clientLeft + canvas.width - 225 &&
+            e.pageX <= canvas.offsetLeft + canvas.clientLeft + canvas.width + 57 - 225 &&
             e.pageY >= canvas.offsetTop + canvas.clientTop + 100 &&
             e.pageY <= canvas.offsetTop + canvas.clientTop + 100 + 56) {
                 game.addDrone();
-                ctx.clearRect(0, 167, 67, 40);
-                ctx.fillText(game.getDroneCount(), 0, 200, 100);
-                ctx.clearRect(0, 0, 100, 100);
-                ctx.fillText(game.displayTime(), 0, 50, 100);
-                ctx.clearRect(76 + 75 + 5, 167, 100, 40);
-                ctx.fillText(game.getMineralCount(), 76 + 75 + 5, 200, 100);
+                ctx.clearRect(canvas.width - 225, 190 - 30, 60, 50);
+                ctx.fillText(game.getDroneCount(), canvas.width - 225, 190, 100);
+                ctx.clearRect(canvas.width - 200, 0, 100, 100);
+                ctx.fillText(game.displayTime(), canvas.width - 200, 50, 150);
+                ctx.clearRect(canvas.width - 90, 190 - 30, 100, 150);
+                ctx.fillText(game.getMineralCount(), canvas.width - 90, 190, 100);
         }
 
         // Hatchery
-        if (e.pageX >= canvas.offsetLeft + canvas.clientLeft + 75 &&
-            e.pageX <= canvas.offsetLeft + canvas.clientLeft + 75 + 76 &&
+        if (e.pageX >= canvas.offsetLeft + canvas.clientLeft + canvas.width - 165 &&
+            e.pageX <= canvas.offsetLeft + canvas.clientLeft + canvas.width - 165 + 66 &&
             e.pageY >= canvas.offsetTop + canvas.clientTop + 100 &&
             e.pageY <= canvas.offsetTop + canvas.clientTop + 156) {
                 game.addHatchery();
-                ctx.clearRect(75, 167, 76, 40);
-                ctx.fillText(game.getHatcheryCount(), 76, 200, 100);
-                ctx.clearRect(0, 0, 100, 100);
-                ctx.fillText(game.displayTime(), 0, 50, 100);
-                ctx.clearRect(76 + 75 + 5, 167, 100, 40);
-                ctx.fillText(game.getMineralCount(), 76 + 75 + 5, 200, 200);
-                ctx.clearRect(0, 167, 67, 40);
-                ctx.fillText(game.getDroneCount(), 0, 200, 100);
+                ctx.clearRect(canvas.width - 150, 190 - 30, 50, 50);
+                ctx.fillText(game.getHatcheryCount(), canvas.width - 150, 190, 100);
+                ctx.clearRect(canvas.width - 200, 0, 100, 100);
+                ctx.fillText(game.displayTime(), canvas.width - 200, 50, 150);
+                ctx.clearRect(canvas.width - 90, 190 - 30, 100, 150);
+                ctx.fillText(game.getMineralCount(), canvas.width - 90, 190, 100);
+                ctx.clearRect(canvas.width - 225, 190 - 30, 60, 50);
+                ctx.fillText(game.getDroneCount(), canvas.width - 225, 190, 100);
         }
     });
 

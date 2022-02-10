@@ -13,7 +13,7 @@ export default class Game {
         this.hatchery_construction_time = 71;
         this.workerTravelTime = 15;
         this.hatchery_mineral_cost = 300;
-        this.max_supply = 14;
+        this.max_supply = 200; // Change if implementing overlords
         this.maxPossibleSupply = 200;
         this.overlord_construction_time = 18;
         this.overlord_mineral_cost = 100;
@@ -40,7 +40,7 @@ export default class Game {
 
     addDrone() {
         this.addTime(this.drone_construction_time);
-        if (this.minerals >= this.drone_mineral_cost && this.currentLarvaCount > 0) {
+        if (this.minerals >= this.drone_mineral_cost && this.currentLarvaCount > 0 && this.drone_count <= this.max_supply) {
             this.minerals -= this.drone_mineral_cost;
             let optimalMinerals = Math.min(this.drone_count, 16 * this.hatchery_count) * this.mining_rate * this.drone_construction_time;
             let suboptimalMinerals = 0;
